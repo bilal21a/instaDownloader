@@ -18,9 +18,10 @@ class InstaController extends Controller
 
 
     }
-    public function index()
-    {
-        $instagramPostUrl = URL::fromString('https://www.instagram.com/tv/CascjxOoJLY/?utm_source=ig_web_copy_link');
+    public function index(Request $request)
+    {   
+        $file_url=$request->url;
+        $instagramPostUrl = URL::fromString($file_url);
         $instagramHandler = new InstagramHandler(new Client());
         $result = $instagramHandler->fetchResource($instagramPostUrl);
 
@@ -35,5 +36,9 @@ class InstaController extends Controller
 
 
 
+    }
+    public function videoDownloader()
+    {
+        return view('index');
     }
 }
