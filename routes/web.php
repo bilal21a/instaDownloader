@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/index', [InstaController::class, 'videoDownloader']);
-Route::post('/insta', [InstaController::class, 'index'])->name('insta.save');
+Route::get('/index', [InstaController::class, 'index']);
+Route::post('/insta', [InstaController::class, 'insta_save'])->name('insta.save');
+Route::post('/youtube', [InstaController::class, 'youtube_save'])->name('youtube.save');
 

@@ -17,14 +17,23 @@
 
     <div class="container my-5">
 
-
+        <h1>Instagram</h1>
         <form action="{{ route('insta.save') }}" method="post">
         @csrf
             <input class="form-control" type="text" name="url" aria-label="readonly input example">
-
             <button type="submit" class="btn btn-primary">download</button>
-
         </form>
+        <hr>
+        <h1>Youtube</h1>
+        <form action="{{ route('youtube.save') }}" method="post">
+        @csrf
+            <input class="form-control" type="text" name="url" aria-label="readonly input example">
+            <button type="submit" class="btn btn-primary">download</button>
+        </form>
+        <hr>
+        <h1>Twitter</h1>
+        <iframe src="https://mp3downy.com/twitter-video-downloader?apikey=&color=17a2b8&bg=ffffff" style="width:100%;min-height:250px;height:auto;" ></iframe>
+        <hr>
 
     </div>
 
