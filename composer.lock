@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "85a70270a10f2903f11b4710a24c9748",
+    "content-hash": "574d6704ff108a581b90f7d32e055338",
     "packages": [
         {
             "name": "any-downloader/download-manager",
@@ -115,6 +115,64 @@
                 "source": "https://github.com/AnyDownloader/InstagramDownloader/tree/v1.2"
             },
             "time": "2021-08-28T08:42:01+00:00"
+        },
+        {
+            "name": "any-downloader/youtube-downloader",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AnyDownloader/YouTubeDownloader.git",
+                "reference": "ab7f1ac16d7c78d1c24e92b27a63052258fbea72"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AnyDownloader/YouTubeDownloader/zipball/ab7f1ac16d7c78d1c24e92b27a63052258fbea72",
+                "reference": "ab7f1ac16d7c78d1c24e92b27a63052258fbea72",
+                "shasum": ""
+            },
+            "require": {
+                "any-downloader/download-manager": "*",
+                "ext-json": "*",
+                "php": ">=7.2.5",
+                "symfony/http-client": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "9.5.x-dev"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AnyDownloader\\YouTubeDownloader\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oleksandr Pinchuk",
+                    "email": "intracomof@gmail.com",
+                    "homepage": "https://iwannacode.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Extract & download video, audio, subtitles from YouTube",
+            "homepage": "https://iwannacode.net",
+            "keywords": [
+                "downloader",
+                "music downloader",
+                "video downloader",
+                "video to text",
+                "youtube downloader",
+                "youtube to text"
+            ],
+            "support": {
+                "issues": "https://github.com/AnyDownloader/YouTubeDownloader/issues",
+                "source": "https://github.com/AnyDownloader/YouTubeDownloader/tree/master"
+            },
+            "time": "2021-08-18T06:03:06+00:00"
         },
         {
             "name": "asm89/stack-cors",
@@ -5805,6 +5863,62 @@
             "time": "2022-02-21T15:00:19+00:00"
         },
         {
+            "name": "tbetool/php-fb-youtube-download",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TBETool/php-fb-youtube-download.git",
+                "reference": "cefd2adc9f8252667cd92dd7ae911bc10a8381bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TBETool/php-fb-youtube-download/zipball/cefd2adc9f8252667cd92dd7ae911bc10a8381bd",
+                "reference": "cefd2adc9f8252667cd92dd7ae911bc10a8381bd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TBETool\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Anuj Sharma",
+                    "email": "anuj@thebornengineer.com",
+                    "homepage": "https://anujsh.in",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Based on Youtube-dl and FFMPEG. Downloads Youtube and Facebook videos from the url.",
+            "homepage": "http://thebornengineer.com",
+            "keywords": [
+                "Anuj Sharma",
+                "Anuj TBE",
+                "PHP download from url",
+                "TBE",
+                "facebook downloader",
+                "facebook video download",
+                "php downloader",
+                "php facebook download",
+                "php facebook download video",
+                "php facebook video download",
+                "php youtube download video",
+                "php youtube video download",
+                "youtube downloader",
+                "youtube video download"
+            ],
+            "support": {
+                "issues": "https://github.com/TBETool/php-fb-youtube-download/issues",
+                "source": "https://github.com/TBETool/php-fb-youtube-download/tree/master"
+            },
+            "time": "2018-10-08T04:52:42+00:00"
+        },
+        {
             "name": "tijsverkoyen/css-to-inline-styles",
             "version": "2.2.4",
             "source": {
@@ -8627,6 +8741,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "any-downloader/youtube-downloader": 20,
         "zeeshan/instagrab": 20
     },
     "prefer-stable": true,
@@ -8635,5 +8750,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }

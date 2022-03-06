@@ -6,31 +6,65 @@ use Illuminate\Http\Request;
 use Zeeshan\Instagrab\Grabber;
 use AnyDownloader\DownloadManager\Model\URL;
 use AnyDownloader\InstagramDownloader\InstagramHandler;
+use AnyDownloader\YouTubeDownloader\YouTubeHandler;
+use Symfony\Component\HttpClient\HttpClient;
+use AnyDownloader\DownloadManager\DownloadManager;
+
+
 use Goutte\Client;
 
 class InstaController extends Controller
 {
-    public function zeeshan()
+    public function indexOld(Request $request)
     {
-        $grabber = new Grabber('https://www.instagram.com/reel/CauXZ67AbJ9/?utm_source=ig_web_copy_link');
-        dd($grabber->getDownloadUrl());
-        $grabber->download();
+        $downloader = new Downloader(FFMPEG_PATH, YOUTUBE-DL_PATH);
+
+       $path = '/aboslute/path/to/directory';
+       $downloader->setOutputPath($path);
+
+
+       try {
+    $downloader->download($request-> url);
+} catch (Exception $exception) {
+    echo $exception->getMessage();
+}
+
 
 
     }
     public function index(Request $request)
-    {   
+    {  
+      
+ini_set('max_execution_time', 300); //3 minutes
+
+
         $file_url=$request->url;
-        $instagramPostUrl = URL::fromString($file_url);
-        $instagramHandler = new InstagramHandler(new Client());
-        $result = $instagramHandler->fetchResource($instagramPostUrl);
+
+        // youtube
+        $httpClient = HttpClient::create();
+
+        $youtubeHandler = new YouTubeHandler($httpClient);
+        $res = $youtubeHandler->fetchResource(URL::fromString($file_url));
+
+        //    dd($res->toArray());
+
+
+
+
+// INSTAGRAM
+        // $instagramPostUrl = URL::fromString($file_url);
+        // $instagramHandler = new InstagramHandler(new Client());
+        // $result = $instagramHandler->fetchResource($instagramPostUrl);
+
+
+        // dd($result);
 
         
         // dd($result->toArray()["preview_image"]["url"]);
-        $kuch_b= $result->toArray()["preview_video"]["url"];
+        $new_url= $res->toArray()["preview_video"]["url"];
         $filename = 'temp-image.mp4';
         $tempImage = tempnam(sys_get_temp_dir(), $filename);
-        copy($kuch_b, $tempImage);
+        copy($new_url, $tempImage);
 
         return response()->download($tempImage, $filename);
 
